@@ -1,0 +1,32 @@
+{
+   "name": "update-course-images-child",
+   "version": "1.0.0",
+   "description": "This extends the update-course-images as a child module.",
+   "main": "main.js",
+   "dependencies": {
+      "canvas-wrapper": "github:byuitechops/canvas-wrapper",
+      "update-course-images": "github:byuitechops/update-course-images",
+      "util": "^0.11.1"
+   },
+   "devDependencies": {
+      "async": "^2.6.0",
+      "child-development-kit": "github:byuitechops/child-development-kit",
+      "tap": "^10.7.3"
+   },
+   "scripts": {
+      "start": "node ./node_modules/child-development-kit/runChild.js",
+      "inspect": "node --inspect-brk ./node_modules/child-development-kit/runChild.js",
+      "test": "tap ./node_modules/child-development-kit/runChild.js -T"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/byuitechops/update-course-images-child.git"
+   },
+   "author": "Sam McGrath",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/byuitechops/update-course-images-child/issues"
+   },
+   "homepage": "https://github.com/byuitechops/update-course-images-child#readme",
+   "childType": "postImport"
+}
