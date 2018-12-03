@@ -18,6 +18,7 @@ const uploader = require('update-course-images');
 
 const canvasGet = util.promisify(canvas.get);
 
+//remove this and all conditionals that uses this variable when about to merge with the official transition tool.
 const TESTING = true;
 
 module.exports = (course, stepCallback) => {
