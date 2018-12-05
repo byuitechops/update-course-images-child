@@ -51,5 +51,5 @@ List the categories used in logging data in your module.
 
 - Dashboard and homeImage Banner Child module
    - Type: local | default --> What was executed inside the child module?
-   - course_name: <String> --> What course was the child module executed on?
+   - course_name: `<String>` --> What course was the child module executed on?
    - success: true | false --> Did the child module execute successfully?
