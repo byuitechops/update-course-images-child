@@ -24,10 +24,9 @@ const TESTING = true;
 module.exports = (course, stepCallback) => {
    (async () => {
       if (TESTING) {
-         course.info.bannerDashboardImages = {
-            type: 'default',
-            // fileLocation: '../test'
-         }
+         course.info.bannerDashboardImagesType = 'default';
+         course.info.bannerDashboardImagesFileLocation = '';
+         // course.info.bannerDashboardImagesFileLocation = '../test';
       }
 
       /**
@@ -71,7 +70,7 @@ module.exports = (course, stepCallback) => {
        * This handles the job when the user provides local during the d2l-to-canvas conversion tool.
        */
       async function handleLocalFile() {
-         let fileLocation = course.info.bannerDashboardImages.fileLocation;
+         let fileLocation = course.info.bannerDashboardImagesFileLocation;
 
          if (!fileLocation) {
             course.error('fileLocation property of bannerDashboardImages property is not set');
@@ -96,12 +95,13 @@ module.exports = (course, stepCallback) => {
        *********************************************************/
       try {
          //checking the course object for what we need
-         if (!course.info.bannerDashboardImages) {
+         if (!course.info.bannerDashboardImagesType) {
             course.error(`Course object does not have bannerDashboardImages property.`);
             stepCallback(null, course);
          }
 
-         switch (course.info.bannerDashboardImages.type) {
+         switch (course.info.bannerDashboardImagesType) {
+            case '':
             case 'none':
                stepCallback(null, course);
                break;
